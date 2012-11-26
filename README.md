@@ -1,6 +1,7 @@
+# switcher
 switcher provides a similar syntax to a switch statement in JavaScript but with RegExp as cases.
 
-# How to use
+## How to use
 I tried to mimic the syntax of a switch statement as good as possible. The following example shows how to match against the UserAgent string to detect iOS devices.
 
 ```javascript
@@ -21,11 +22,11 @@ Note that the Regular Expressions are written as Strings as JavaScript doesn't a
 switcher(scope, tests, options);
 ```
 
-# Options
+## Options
 Options can be changed by passing an object as third parameter to switcher.
 
 ``breakMode``  
 When set to ``true`` (which is default) switcher will stop testing after the first match. When set to ``false`` switcher will continue testing (but note that changes that may have been made by previous matches can be overwritten ‒ *especially if you have a default case at the end*).
 
-# License
+## License
 [MIT license](http://opensource.org/licenses/MIT)
