@@ -2,7 +2,7 @@
 	"name": "switcher",
 	"description": "Function to provide a similar syntax to a switch statement but with regex as cases.",
 	"version": "1.0.0",
-	"keywords": ["javascript", "switch"],
+	"keywords": ["javascript", "switch", "ender"],
 	"homepage": "http://earmaster.github.com/switcher/",
 	"author": "Nico Wiedemann",
 	"maintainers": [{
