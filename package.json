@@ -1,0 +1,23 @@
+{
+	"name": "switcher",
+	"description": "Function to provide a similar syntax to a switch statement but with regex as cases.",
+	"version": "1.0.0",
+	"keywords": ["javascript", "switch"],
+	"homepage": "http://earmaster.github.com/switcher/",
+	"author": "Nico Wiedemann",
+	"maintainers": [{
+		"name": "Nico Wiedemann",
+		"email": "nico.wiedemann@gmx.de",
+		"web": "http://www.offen-siv.de"
+	}],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/EarMaster/switcher"
+	},
+	"bugs": { "web": "https://github.com/EarMaster/switcher/issues" },
+	"licenses": {
+		"type": "MIT",
+		"url": "http://opensource.org/licenses/mit-license.php"
+	},
+	"main": "switcher.min.js"
+}

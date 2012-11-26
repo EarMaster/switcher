@@ -1,5 +1,6 @@
 /*! 
  * switcher 1.0 (c) 2012 Nico Wiedemann - MIT license
+ * https://github.com/EarMaster/switcher
  */
 !function (definition) {
 	if (typeof define==="function" && define.amd)
@@ -7,14 +8,6 @@
 	else
 		self.switcher = definition();
 }(function () {
-	/*switcher(navigator.userAgent, {
-		'': function (scope) {
-			// default case (should be last with breakMode set to true!)
-		},
-		'/i(OS|Pad|Phone|Pod)/': function () {
-
-		}
-	})*/
 	'use strict';
 	/**
 	 * function to provide a similar syntax to a switch statement but with regex as cases
