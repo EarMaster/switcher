@@ -6,10 +6,16 @@ I tried to mimic the syntax of a switch statement as good as possible. The follo
 
 ```javascript
 switcher(navigator.userAgent, {
-	'/i(OS|Pad|Phone|Pod)/': function (scope, expression) {
+	'/android/i': function () { // You can use flags as you know them from RegExp.
+		console.log('Android device.')
+	},
+	'/i(OS|Pad|Phone|Pod)/': function (scope, expression) { // The callback receives the scope variable and the matched expression as parameters.
 		console.log('iOS device. '+scope+' did match '+expression);
 	},
-	'': function () {
+	'iPad': function () { // Normal strings work also (just as with RegExp). Note that this case will not be reached as the case before will match, unless breakMode is set to false (see below).
+		console.log('It\'s an iPad');
+	}
+	'': function () { // default case
 		console.log('any device.');
 	}
 });
