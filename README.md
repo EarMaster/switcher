@@ -36,3 +36,7 @@ When set to ``true`` (which is default) switcher will stop testing after the fir
 
 ## License
 [MIT license](http://opensource.org/licenses/MIT)
+
+## Flattr
+<a href="http://flattr.com/thing/1097660/switcher">
+<img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /></a>
