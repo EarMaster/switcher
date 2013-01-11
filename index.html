@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Switcher by EarMaster</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 class="header">Switcher</h1>
+        <p class="header">switcher provides a similar syntax to a switch statement in JavaScript but with RegExp as cases</p>
+
+        <ul>
+          <li class="download"><a class="buttons" href="https://github.com/EarMaster/switcher/zipball/master">Download ZIP</a></li>
+          <li class="download"><a class="buttons" href="https://github.com/EarMaster/switcher/tarball/master">Download TAR</a></li>
+          <li><a class="buttons github" href="https://github.com/EarMaster/switcher">View On GitHub</a></li>
+        </ul>
+
+        <p class="header">This project is maintained by <a class="header name" href="https://github.com/EarMaster">EarMaster</a></p>
+
+
+      </header>
+      <section>
+        <h1>switcher</h1>
+
+<p>switcher provides a similar syntax to a switch statement in JavaScript but with RegExp as cases.</p>
+
+<h2>How to use</h2>
+
+<p>I tried to mimic the syntax of a switch statement as good as possible. The following example shows how to match against the UserAgent string to detect iOS devices.</p>
+
+<div class="highlight"><pre><span class="nx">switcher</span><span class="p">(</span><span class="nx">navigator</span><span class="p">.</span><span class="nx">userAgent</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">'/android/i'</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// You can use flags as you know them from RegExp.</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Android device.'</span><span class="p">)</span>
+    <span class="p">},</span>
+    <span class="s1">'/i(OS|Pad|Phone|Pod)/'</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">expression</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// The callback receives the scope variable and the matched expression as parameters.</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'iOS device. '</span><span class="o">+</span><span class="nx">scope</span><span class="o">+</span><span class="s1">' did match '</span><span class="o">+</span><span class="nx">expression</span><span class="p">);</span>
+    <span class="p">},</span>
+    <span class="s1">'iPad'</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// Normal strings work also (just as with RegExp). Note that this case will not be reached as the case before will match, unless breakMode is set to false (see below).</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'It\'s an iPad'</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="s1">''</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// default case</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'any device.'</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+</pre></div>
+
+<p>Note that the Regular Expressions are written as Strings as JavaScript doesn't allow RegExp objects as keys. The default case is represented by an empty string as this one matches everything. You should always put the default case at last as with <code>breakMode</code> set to <code>true</code> no cases after the default one could be reached.</p>
+
+<h2>Signature</h2>
+
+<div class="highlight"><pre><span class="nx">switcher</span><span class="p">(</span><span class="nx">scope</span><span class="p">,</span> <span class="nx">tests</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
+</pre></div>
+
+<h2>Options</h2>
+
+<p>Options can be changed by passing an object as third parameter to switcher.</p>
+
+<p><code>breakMode</code><br>
+When set to <code>true</code> (which is default) switcher will stop testing after the first match. When set to <code>false</code> switcher will continue testing (but note that changes that may have been made by previous matches can be overwritten ‒ <em>especially if you have a default case at the end</em>).</p>
+
+<h2>License</h2>
+
+<p><a href="http://opensource.org/licenses/MIT">MIT license</a></p>
+      </section>
+      <footer>
+        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+		          <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-1896070-6");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
