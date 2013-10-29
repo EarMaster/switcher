@@ -3,8 +3,13 @@
  * https://github.com/EarMaster/switcher
  */
 !function (definition) {
-	if (typeof define==="function" && define.amd)
+	// AMD
+	if (typeof define==='function' && define.amd)
 		define(definition);
+	// node.js
+	else if (typeof module!=='undefined' && typeof module.exports!=='undefined')
+		module.exports = definition();
+	// browser
 	else
 		self.switcher = definition();
 }(function () {
